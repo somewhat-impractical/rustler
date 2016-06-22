@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="rustler.js"></script>
+		<link rel="stylesheet" href="rustler.css" type="text/css" />
+	</head>
+
+	<body onload="Game.init()">
+		<div id="video_container">
+			<video id="video" width="320" height="240"></video>
+		</div>
+		<canvas id="canvas" width="320" height="240"></canvas>
+		<div id="clock"></div>
+		<div id="meter_container">
+			<div id="meter"></div>
+		</div>
+		<div id="difficulty">
+			<button onclick="Game.startGame(50);" style="right: 50%">Hard</button>
+			<button onclick="Game.startGame(75);" style="right: 25%">Medium</button>
+			<button onclick="Game.startGame(100);" style="right: 5%">Easy</button>
+		</div>
+		<div id="youwon" class="hidden"><img src="youwon.png" /></div>
+		<div id="youlost" class="hidden"><img src="youlost.png" /></div>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+:root {
+	overflow: hidden;
+}
+body {
+	background-color: black;
+	color: white;
+	font-family: grobold;
+}
+#video_container {
+	height: 480px;
+	text-align: center;
+}
+#video {
+	transform: scale(2);
+	transform-origin: 50% 0%;
+	background-color: #222;
+}
+#canvas {
+	display: none;
+}
+#clock {
+	font-size: 5em;
+	line-height: 1.5em;
+	height: 1.25em;
+	text-align: center;
+}
+#meter_container {
+	height: 3em;
+}
+#meter {
+	display: inline-block;
+	background-color: red;
+	height: 3em;
+	max-width: 100%;
+	transition: width 100ms, background-color 100ms;
+}
+#difficulty {
+	position: relative;
+}
+body.running #difficulty {
+	display: none;
+}
+#difficulty > button {
+	background: transparent;
+	border: none;
+	font-family: grobold;
+	color: white;
+	text-decoration: none;
+	font-size: 2em;
+	line-height: 2em;
+	text-align: right;
+	position: absolute;
+	cursor: pointer;
+}
+#youwon,
+#youlost {
+	font-size: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -350px;
+	margin-left: -375px;
+	text-align: center;
+	transform: scale(1) rotate(350deg);
+	transition: all 1000ms;
+}
+#youwon.hidden,
+#youlost.hidden {
+	opacity: 0;
+	transform: scale(0.5) rotate(0deg);
+	transition: all 750ms 750ms;
+}
