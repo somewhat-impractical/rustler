@@ -58,7 +58,6 @@ let Game = {
 	},
 
 	requestAnimationFrame: function () {
-		// mozRequestAnimationFrame(this.draw.bind(this));
 		setTimeout(this.draw.bind(this), 50);
 	},
 
@@ -82,19 +81,13 @@ let Game = {
 			return;
 		}
 
-		// let bwFrame = this.otherContext.createImageData(this.width, this.height);
-		// let bwData = bwFrame.data;
 		let count = 0;
 		for (let i = 0; i < this.pixelCount; i++) {
 			if (Math.abs(this.previousCanvasData[i * 4] - data[i * 4]) > 20) {
-				// bwData[i * 4 + 3] = 0;
 				count++;
-			} else {
-				// bwData[i * 4 + 3] = 255;
 			}
 		}
 
-		// this.otherContext.putImageData(bwFrame, 0, 0);
 		let time = Date.now() / 1000 - this.startTime;
 		this.clock.textContent = time.toFixed(1);
 
