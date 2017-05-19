@@ -37,7 +37,9 @@ let Game = {
 			this.video.play();
 		};
 		if ('getUserMedia' in navigator.mediaDevices) {
-			navigator.mediaDevices.getUserMedia({video: true}).then(onstart);
+			navigator.mediaDevices.getUserMedia({
+				video: { width: this.width, height: this.height }
+			}).then(onstart);
 		} else {
 			navigator.webkitGetUserMedia({video: true}, onstart, function() {});
 		}
@@ -97,7 +99,7 @@ let Game = {
 			this.hurryPlayed = seconds;
 		}
 
-		let percentage = count / 50;
+		let percentage = count / 150;
 		this.meter.style.width = percentage + '%';
 		this.meter.style.backgroundColor = 'hsl(' + Math.max(0, 100 - percentage) + ', 80%, 50%)';
 
